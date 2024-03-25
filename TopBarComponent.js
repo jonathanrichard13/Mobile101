@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 const TopBarComponent = () => {
   return (
@@ -6,11 +6,15 @@ const TopBarComponent = () => {
       <Image source={require("./assets/bni_logo.png")} />
       
       <View style={ styles.rightContainer }>
-        <Image source={require("./assets/notification_with_badge.png")}></Image>
-        <View style={ styles.helpContainer }>
-            <Image source={require("./assets/help.png")}></Image>
-            <Text>Bantuan</Text>
-        </View>
+        <TouchableOpacity>
+          <Image source={require("./assets/notification_with_badge.png")}></Image>
+        </TouchableOpacity>
+        <TouchableOpacity> 
+          <View style={ styles.helpContainer }>
+                <Image source={require("./assets/help.png")}></Image>
+              <Text>Bantuan</Text>
+          </View>
+        </TouchableOpacity>
       </View>
 
     </View>
