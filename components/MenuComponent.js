@@ -4,42 +4,42 @@ import { FlatList, StyleSheet, Text, View, Image, Dimensions } from "react-nativ
 const data = [
   {
     id: 1,
-    image:  require('./assets/transfer.png'),
+    image:  require('../assets/transfer.png'),
     name: "Transfer"
   },
   {
     id: 2,
-    image: require('./assets/ewallet.png'),
+    image: require('../assets/ewallet.png'),
     name: "E-Wallet"
   },
   {
     id: 3,
-    image: require('./assets/pembayaran.png'),
+    image: require('../assets/pembayaran.png'),
     name: "Pembayaran"
   },
   {
     id: 4,
-    image: require('./assets/pembelian.png'),
+    image: require('../assets/pembelian.png'),
     name: "Pembelian"
   },
   {
     id: 5,
-    image: require('./assets/investasi.png'),
+    image: require('../assets/investasi.png'),
     name: "Investasi"
   },
   {
     id: 6,
-    image: require('./assets/lifestyle.png'),
+    image: require('../assets/lifestyle.png'),
     name: "Lifestyle"
   },
   {
     id: 7,
-    image: require('./assets/life-goals.png'),
+    image: require('../assets/life-goals.png'),
     name: "Life Goals"
   },
   {
     id: 8,
-    image: require('./assets/gaming.png'),
+    image: require('../assets/gaming.png'),
     name: "Gaming"
   },
 ];
@@ -65,7 +65,6 @@ const MenuComponent = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         numColumns={numColumns}
-        contentContainerStyle={styles.menuListContainer}
         showsHorizontalScrollIndicator={false}
       />
     </View>
@@ -76,10 +75,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
     width: "100%"
-  },
-
-  menuListContainer: {
-    width: '100%',
   },
 
   menuContainer: {

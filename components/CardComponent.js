@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const CardComponent = () => {
+const CardComponent = ({nominal}) => {
   const dots = [];
   const [isNominalHidden, setIsNominalHidden] = useState(true);
   
@@ -11,17 +11,17 @@ const CardComponent = () => {
     );
   }
 
-  nominalComponent = isNominalHidden ? dots : <Text style={[styles.colorWhite, styles.font16]}>13.582.000</Text>
+  nominalComponent = isNominalHidden ? dots : <Text style={[styles.colorWhite, styles.font16]}>{nominal}</Text>
 
   return (
     <ImageBackground style={ styles.container } 
                     imageStyle={{ borderRadius: 12}}
-                    source={ require('./assets/card_bg.png') } 
+                    source={ require('../assets/card_bg.png') } 
                     resizeMode="cover">
       <View style={ [styles.justifySpaceBetween, styles.horizontal] }>
         <Text style={[styles.colorWhite, styles.font12]}>Taplus Pegawai BNI</Text>
         <TouchableOpacity>
-          <Image source={ require('./assets/arrow_down.png') }/>
+          <Image source={ require('../assets/arrow_down.png') }/>
         </TouchableOpacity>
       </View>
 
@@ -29,7 +29,7 @@ const CardComponent = () => {
         <Text style={[styles.colorWhite, styles.font16]}>Rp</Text>
         { nominalComponent }
         <TouchableOpacity onPress={() => setIsNominalHidden(!isNominalHidden)}>
-          <Image source={ require('./assets/eye.png') } style={ styles.eyeIcon }></Image>
+          <Image source={ require('../assets/eye.png') } style={ styles.eyeIcon }></Image>
         </TouchableOpacity>
       </View>
     
@@ -37,14 +37,14 @@ const CardComponent = () => {
         <View style={ [styles.horizontal, styles.gap6] }>
             <Text style={[styles.colorWhite, styles.font12]}>1812345678</Text>
             <TouchableOpacity>
-              <Image source={ require('./assets/copy.png') }/>
+              <Image source={ require('../assets/copy.png') }/>
             </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={[styles.horizontal, styles.poinContainer, styles.gap4, styles.alignCenter]}>
-          <Image style={styles.poinImg} source={ require('./assets/poin.png') } />
+          <Image style={styles.poinImg} source={ require('../assets/poin.png') } />
           <Text style={styles.poinNumber}>3.100</Text>
-          <Image source={ require('./assets/arrow_right.png') }></Image>
+          <Image source={ require('../assets/arrow_right.png') }></Image>
         </TouchableOpacity>
       </View>
     

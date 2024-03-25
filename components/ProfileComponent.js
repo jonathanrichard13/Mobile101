@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 const ProfileComponent = ({name}) => {
   return (
     <View style={ styles.container }>
-        <Image source={require("./assets/avatar.png")} />
+        <Image source={require("../assets/avatar.png")} />
         <View>
             <Text style={ styles.welcomeText }>Selamat Datang</Text>
             <Text style={ styles.nameText }>{name}</Text>

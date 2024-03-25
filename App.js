@@ -1,34 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, Image } from 'react-native';
-import TopBarComponent from './TopBarComponent';
-import ProfileComponent from './ProfileComponent';
-import CardComponent from './CardComponent';
-import CategoryChipComponent from './CategoryChipComponent';
-import MenuComponent from './MenuComponent';
+import React from 'react'
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet, View } from "react-native";
+import HomeScreen from './screen/HomeScreen';
+import SplashScreen from "./screen/SplashScreen";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+export default function App () {
+
   return (
-    <SafeAreaView style={styles.container}>
-        <View style={styles.topContainer}>
-          <TopBarComponent />
-          <ProfileComponent name='Nabila Leksana Putri' />
-          <CardComponent />
-        </View>
-
-        <CategoryChipComponent></CategoryChipComponent>
-
-        <MenuComponent></MenuComponent>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
+        <Stack.Screen options={{headerShown: false}} name="Splash" component={SplashScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  topContainer: {
-    padding: 20,
-    backgroundColor: '#FFE0CD',
-  }
+ 
 });
