@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const CardComponent = ({nominal}) => {
+const CardComponent = ({nominal, accountNumber, pointsCount}) => {
   const dots = [];
   const [isNominalHidden, setIsNominalHidden] = useState(true);
   
@@ -35,7 +35,7 @@ const CardComponent = ({nominal}) => {
     
       <View style={ [styles.horizontal, styles.justifySpaceBetween, styles.alignCenter] }>
         <View style={ [styles.horizontal, styles.gap6] }>
-            <Text style={[styles.colorWhite, styles.font12]}>1812345678</Text>
+            <Text style={[styles.colorWhite, styles.font12]}>{accountNumber}</Text>
             <TouchableOpacity>
               <Image source={ require('../assets/copy.png') }/>
             </TouchableOpacity>
@@ -43,7 +43,7 @@ const CardComponent = ({nominal}) => {
 
         <TouchableOpacity style={[styles.horizontal, styles.poinContainer, styles.gap4, styles.alignCenter]}>
           <Image style={styles.poinImg} source={ require('../assets/poin.png') } />
-          <Text style={styles.poinNumber}>3.100</Text>
+          <Text style={styles.poinNumber}>{pointsCount}</Text>
           <Image source={ require('../assets/arrow_right.png') }></Image>
         </TouchableOpacity>
       </View>

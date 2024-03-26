@@ -6,15 +6,34 @@ import CardComponent from '../components/CardComponent';
 import CategoryChipComponent from '../components/CategoryChipComponent';
 import MenuComponent from '../components/MenuComponent';
 import PromoComponent from '../components/PromoComponent';
+import { useEffect, useState } from 'react';
+import { SimulateGetAccount } from '../utils/simulateGetAccount';
 
 export default function HomeScreen() {
+  const [account, setAccount] = useState()
+
+  const handleAsync = async () => {
+    try {
+      const asyncResult = await SimulateGetAccount()
+      console.log("Berhasil: ", asyncResult)
+      setAccount(asyncResult)
+    } catch(exception) {
+      console.error("Catch: ", exception)
+    } finally {
+
+    }
+  }
+  
+  useEffect(() => {
+    handleAsync()
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
         <View style={styles.topContainer}>
           <TopBarComponent />
-          <ProfileComponent name='Nabila Leksana Putri' />
-          <CardComponent nominal='13.582.000' />
+          <ProfileComponent name= {account ? account.name : 'Default User'} />
+          <CardComponent nominal='13.582.000' accountNumber='1812345678' pointsCount='3.100'/>
         </View>
 
         <CategoryChipComponent></CategoryChipComponent>

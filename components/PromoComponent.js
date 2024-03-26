@@ -15,9 +15,8 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     padding: 20,
-    // marginTop: 14
-    // objectFit: 'contain',
-    // height: '100%'
+    // backgroundColor: 'blue'
+
   },
 
   promoText: {
@@ -30,6 +29,7 @@ const styles = StyleSheet.create({
   bannerImg: {
     width: '100%',
     height: 150,
+    // backgroundColor: 'red',
     objectFit: 'contain',
   }
 
