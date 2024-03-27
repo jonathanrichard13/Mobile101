@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView, StyleSheet, View, } from 'react-native';
 import TopBarComponent from '../components/TopBarComponent';
 import ProfileComponent from '../components/ProfileComponent';
 import CardComponent from '../components/CardComponent';

@@ -1,6 +1,18 @@
-import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
+import { auth,signOut } from '../firebaseConfig';
+
 
 const TopBarComponent = () => {
+  const signOutUser = () => {
+    console.log('SignOut Called')
+    signOut(auth).then(() => {
+      console.log("Sign out successful")
+    }).catch((error) => {
+      console.error(error)
+    })
+  }
+
+
   return (
     <View style={ styles.container }>
       <Image source={require("../assets/bni_logo.png")} />
@@ -15,6 +27,9 @@ const TopBarComponent = () => {
               <Text>Bantuan</Text>
           </View>
         </TouchableOpacity>
+
+        <Button title="Sign Out" color="#dc2626" onPress={() => {signOutUser()}} />
+          
       </View>
 
     </View>

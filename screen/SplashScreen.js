@@ -4,7 +4,7 @@ export default function SplashScreen({navigation}) {
   return (
     
     <ImageBackground style={styles.container} resizeMode="cover" source={ require('../assets/Background.png') }>
-        <TouchableOpacity onPress={() => { navigation.navigate('Home') }} style={styles.container} >
+        <TouchableOpacity onPress={() => { navigation.navigate('Login') }} style={styles.container} >
             <View style={[styles.subContainer, styles.topContainer]}>        
               <Image source={ require('../assets/bni_logo.png') } style={styles.image} />
               <Text style={styles.tagline}>Melayani Negeri Kebanggaan Bangsa</Text>
